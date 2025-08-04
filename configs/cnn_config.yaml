@@ -1,0 +1,9 @@
+# configs/cnn_config.yaml
+model_type: cnn
+model_params:
+  in_channels: 1
+  num_classes: 10
+training:
+  batch_size: 64
+  lr: 0.001
+  epochs: 5

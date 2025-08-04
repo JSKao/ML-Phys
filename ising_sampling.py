@@ -24,12 +24,17 @@ class IsingSampler:
         return np.sum(state)
 
     def mcmc_metropolis(self):
+        # Metropolis-Hastings MCMC 方法
         state = self.state.copy()
         for step in range(self.nsteps):
+            # 隨機選擇一個格點
             i, j = np.random.randint(0, self.L, size=2)
+            # 計算能量變化
             S = state[i, j]
+            # 四個鄰居的自旋總和
             nb = state[(i+1)%self.L, j] + state[(i-1)%self.L, j] + state[i, (j+1)%self.L] + state[i, (j-1)%self.L]
             delta_E = 2 * S * nb
+            # Metropolis 條件, 也是Boltzmann因子被引入的地方, 使得取樣自然會依照Boltzmann分布
             if np.random.rand() < np.exp(-delta_E / self.T):
                 state[i, j] *= -1
             self.energies.append(self.energy(state))
@@ -77,23 +82,6 @@ class IsingSampler:
             self.states.append(state.copy())
         return np.array(self.states), np.array(self.energies), np.array(self.magnetizations)
     
-    def mps_sampling(self, nsamples=None):
-        import quimb as qu
-        import quimb.tensor as qtn
-        L = self.L
-        if nsamples is None:
-            nsamples = self.nsteps
-        # 這裡僅示意：實際應用需根據物理模型構建正確的MPS
-        # 這裡直接隨機產生樣本，展示接口
-        samples = []
-        for _ in range(nsamples):
-            sample = np.random.choice([1, -1], size=(L, L))
-            samples.append(sample)
-        samples = np.array(samples)
-        # 你可以進一步計算能量與磁化量
-        energies = [self.energy(sample) for sample in samples]
-        magnetizations = [self.magnetization(sample) for sample in samples]
-        return samples, np.array(energies), np.array(magnetizations)
     
     def mps_sampling_1d(self, nsamples=None):
         """

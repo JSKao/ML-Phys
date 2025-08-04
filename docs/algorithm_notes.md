@@ -100,3 +100,103 @@ recon_loss = F.mse_loss(x_hat, x)
 kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
 loss = recon_loss + kl_loss
 loss.backward()
+
+
+# Graph Neural Network(GNN)
+
+圖神經網絡（Graph Neural Network, GNN）是一種能夠處理圖結構數據的機器學習模型。與傳統的神經網絡（如 CNN 處理影像、RNN 處理序列）相比，GNN 的設計目的是解決節點之間非結構化連接（如社交網絡、知識圖譜、分子結構）所帶來的學習挑戰。
+
+---
+
+## 🔍 一、GNN 的基本原理
+
+### 📌 核心任務：信息傳遞（Message Passing）
+
+GNN 的核心思想是：每個節點不只看自己，還會考慮鄰居節點的資訊，來更新自己的表示（embedding）。
+
+### 🧱 一般 GNN 的更新流程：
+
+設圖為 \( G=(V,E) \)，其中：
+
+- \( V \)：節點集合（nodes）
+- \( E \)：邊集合（edges）
+- \( h_v^{(k)} \)：節點 \( v \) 在第 \( k \) 層的特徵表示（embedding）
+
+每一層 GNN 的步驟包含：
+
+1. **Message aggregation（資訊彙整）**：
+
+\[
+m_v^{(k)} = \text{AGGREGATE}^{(k)}(\{ h_u^{(k-1)} : u \in N(v) \})
+\]
+
+其中 \( N(v) \) 是節點 \( v \) 的鄰居集合。  
+Aggregate 可以是 mean, sum, max, attention 等。
+
+2. **Update（狀態更新）**：
+
+\[
+h_v^{(k)} = \text{UPDATE}^{(k)}(h_v^{(k-1)}, m_v^{(k)})
+\]
+
+重複這個流程 \( K \) 次後，就能學出每個節點的最終表示 \( h_v^{(K)} \)，可以用來做：
+
+- 節點分類
+- 圖分類（如整個分子是否有毒）
+- 邊預測（如知識圖譜補全）
+
+---
+
+## 🧠 二、與傳統機器學習模型對比
+
+| 特性       | CNN（卷積神經網絡）         | RNN（循環神經網絡）      | GNN（圖神經網絡）            |
+|------------|-----------------------------|--------------------------|-----------------------------|
+| 資料結構   | 網格（如影像）              | 序列（如語音、文字）      | 圖結構（任意連接關係）       |
+| 鄰近性結構 | 固定鄰域（如 3x3 kernel）   | 線性鄰居（前一個/下一個） | 任意鄰居（非線性）           |
+| 參數共用   | 是                          | 是                       | 是（消息傳遞共用規則）       |
+| 資訊傳遞方式 | 卷積                       | 時序傳遞                  | 聚合鄰居特徵後更新           |
+| 與 GNN 最接近的是？ | 🔁 CNN（概念上最類似） |                          |                             |
+
+🔸 GNN 和 CNN 最像：都強調「鄰近資料的聚合」，只是 CNN 是固定結構，而 GNN 可處理任意圖。
+
+---
+
+## 🧪 三、常見 GNN 模型類型
+
+| 模型      | 聚合方式                 | 特點                       |
+|-----------|--------------------------|----------------------------|
+| GCN       | 鄰居平均 + 線性轉換       | 最經典、簡單               |
+| GraphSAGE | Sum/Mean/Max + MLP        | 可處理大圖、支援 inductive |
+| GAT       | 加入 self-attention 機制  | 自適應加權鄰居，提升效果   |
+| GIN       | 使用 injective function   | 理論證明有更強表示能力     |
+
+---
+
+## 🔬 四、GNN 的應用場景
+
+- 社交網絡：朋友推薦、社群偵測
+- 分子圖分析：藥物設計、毒性預測
+- 知識圖譜：推理、問答系統
+- 程式分析：靜態分析、程式相似度
+- 量子物理：分子表示學習、Hamiltonian 網絡建模
+
+---
+
+## 🛠 五、簡單 PyTorch Geometric 範例
+
+```python
+import torch
+from torch_geometric.nn import GCNConv
+import torch.nn.functional as F
+
+class SimpleGNN(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels):
+        super().__init__()
+        self.conv1 = GCNConv(in_channels, hidden_channels)
+        self.conv2 = GCNConv(hidden_channels, out_channels)
+
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index)
+        return x
