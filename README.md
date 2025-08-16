@@ -1,16 +1,16 @@
 # ML-Phys: Machine Learning for Quantum Physics
 
-A machine learning toolkit for quantum many-body systems and quantum information processing. This repository implements the **foundational quantum state generation and analysis** components that complement our [**QCVV (Quantum Characterization, Verification & Validation)**](../QCVV) framework for a complete quantum research pipeline.
+A machine learning toolkit for quantum many-body systems and quantum information processing. This repository implements the **foundational quantum state generation and analysis** components that complement our [**QCVV (Quantum Characterization, Verification & Validation)**](https://github.com/JSKao/QCVV) framework for a complete quantum research pipeline.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![Tests](https://img.shields.io/badge/Tests-38%20passed-brightgreen.svg)
 
 ## 🔗 Project Ecosystem
 
-**ML-Phys** and **[QCVV](../QCVV)** work together to provide end-to-end quantum research capabilities:
+**ML-Phys** and **[QCVV](https://github.com/JSKao/QCVV)** work together to provide end-to-end quantum research capabilities:
 
 - **ML-Phys** (this repo): Quantum state toolkit + ML architectures
-- **[QCVV](../QCVV)**: Advanced verification protocols + experimental validation
+- **[QCVV](https://github.com/JSKao/QCVV)**: Advanced verification protocols + experimental validation
 
 As our research progresses toward **device-independent quantum certification**, these repositories will become increasingly integrated, with ML-Phys providing the theoretical foundations and QCVV handling the experimental verification.
 
