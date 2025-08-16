@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "154641bb0f68142c",
+    "type": "split",
+    "children": [
+      {
+        "id": "362dd778a9caeb30",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e935d23b2187a637",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "quantum_graph_net/Notes/QuantumGraphNet - Architecture.canvas.canvas",
+                "viewState": {
+                  "x": 371.27284557122573,
+                  "y": 396.42232220084225,
+                  "zoom": -2.155370862086614
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "QuantumGraphNet - Architecture.canvas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2c205bda978c79b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "d92c95b18f000fc8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3bb33595fc07ef51",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8b6a623ca1f1d76c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "644f014d4c171055",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0f755fe3d607e5b0",
+    "type": "split",
+    "children": [
+      {
+        "id": "04f9a348818d4cc2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "026890b97ba350e8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "quantum_graph_net/Notes/QuantumGraphNet - Architecture.canvas.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for QuantumGraphNet - Architecture.canvas"
+            }
+          },
+          {
+            "id": "7d0db2a3fc303548",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "quantum_graph_net/Notes/QuantumGraphNet - Architecture.canvas.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from QuantumGraphNet - Architecture.canvas"
+            }
+          },
+          {
+            "id": "b85bf89c16c68d3d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1be8a5ae781ce8e2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "quantum_graph_net/Notes/QuantumGraphNet - Architecture.canvas.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of QuantumGraphNet - Architecture.canvas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e935d23b2187a637",
+  "lastOpenFiles": [
+    "quantum_graph_net/Notes/QuantumGraphNet - Architecture.canvas.canvas",
+    "quantum_graph_net/Notes/QuantumGraphNet - Project Index.md.md",
+    "quantum_graph_net/Checklist.md",
+    "docs/Lectures.md",
+    "docs/機器學習核心概念與量子應用講義_.md",
+    "docs/ml_quantum_note.md",
+    "docs/dnn_note.pdf",
+    "docs/ml_quantum_notes.md",
+    "quantum_graph_net/Notes/GNN.md",
+    "quantum_graph_net/Notes/Entanglement.md",
+    "quantum_graph_net/Notes/GraphStates.md",
+    "quantum_graph_net/README.md",
+    "quantum_graph_net/Notes/ModelDesign.md",
+    "quantum_graph_net/Notes/DataPipeline.md",
+    "quantum_graph_net/Notes/Complexity.md",
+    "quantum_graph_net/Notes/GNN_Tasks.md",
+    "quantum_graph_net/Notes",
+    "quantum_graph_net/Notes/Teach.md",
+    "README.md",
+    "quantum_graph_net/src/train/train_model.py",
+    "quantum_graph_net/src/utils/metrics.py",
+    "quantum_graph_net/src/quantum/state_generator.py",
+    "quantum_graph_net/src/quantum/qiskit_utils.py",
+    "quantum_graph_net/src/models/graphsage.py",
+    "quantum_graph_net/src/models/gcn.py",
+    "quantum_graph_net/src/models/gat.py",
+    "quantum_graph_net/src/graph/graph_builder.py",
+    "quantum_graph_net/visualizations/entanglement_patterns.png",
+    "QuantumGraphNet/notes/00_index.md.md",
+    "Notes/lecture_notes.md",
+    "Notes/ML_notes_CH.md",
+    "Notes/ML_notes_EN.md"
+  ]
+}
